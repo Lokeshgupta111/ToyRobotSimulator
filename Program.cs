@@ -10,7 +10,7 @@ namespace RobotSimulator
 
 
             int x, y;
-           
+
             Console.Write("Enter an X: ");
 
             while (!int.TryParse(Console.ReadLine(), out x))
@@ -36,7 +36,6 @@ namespace RobotSimulator
 
             if (toy.Place(x, y, direction))
             {
-                toy.Left();
                 toy.Move();
                 toy.Move();
                 toy.Left();
@@ -44,5 +43,7 @@ namespace RobotSimulator
             }
             toy.Report();
         }
+
+
     }
 }
