@@ -37,10 +37,10 @@ namespace RobotSimulator
             if (toy.Place(x, y, direction))
             {
                 toy.Left();
-               // toy.Move();
-                //toy.Move();
-                //toy.Left();
-                //toy.Move();
+                toy.Move();
+                toy.Move();
+                toy.Left();
+                toy.Move();
             }
             toy.Report();
         }

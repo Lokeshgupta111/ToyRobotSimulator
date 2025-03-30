@@ -27,8 +27,9 @@ namespace RobotSimulator
             return true;
         }
 
-        public void Move()
+        public bool Move()
         {
+            if (x > 5 || x < 0 || y > 5 || y < 0) return false;
             if (f == Face.EAST && x < 5)
                 x += 1;
             if (f == Face.WEST && x > 0)
@@ -38,7 +39,7 @@ namespace RobotSimulator
             if (f == Face.SOUTH && y > 0)
                 y -= 1;
 
-
+            return true;
         }
 
         public void Left()
@@ -53,10 +54,11 @@ namespace RobotSimulator
             else f += 1;
 
         }
-        public void Report()
+        public bool Report()
         {
-            if (x > 5 || x < 0 || y > 5 || y < 0) { Console.WriteLine($"Output: Robot is off in the table."); return; }
+            if (x > 5 || x < 0 || y > 5 || y < 0) { Console.WriteLine($"Output: Robot is off in the table."); return false; }
             Console.WriteLine($"Output: {x}, {y}, {(Face)f}");
+            return true;
         }
     }
 
